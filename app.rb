@@ -16,7 +16,7 @@ stream = stream.each do |tuple|
   
   # Extract all the links, see which ones are '.pdfs'
   doc.css('a').each do |link|
-    if link.attribute('href').to_s.downcase.end_with(".pdf")
+    if link.attribute('href').to_s.downcase.end_with?(".pdf")
       target_url = URI.join(url, link['href'])
       
       # Emit back to the stream
