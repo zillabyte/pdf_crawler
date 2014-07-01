@@ -12,13 +12,15 @@ stream = app.source("select * from web_deep")
 stream = stream.each do |tuple|
   
   # Init 
-  url = URI.parse(tuple[:url])
+  url = URI.parse(tuple[:url]) rescue next
   doc = Nokogiri::HTML(tuple[:html])
   
   # Extract all the links, see which ones are '.pdfs'
   doc.css('a').each do |link|
-    if link.attribute('href').to_s.downcase.end_with?(".pdf")
-      target_url = URI.join(url, link['href'])
+    
+    href = link.attribute('href').to_s.downcase.gsub(' ','%20')
+    if href.end_with?(".pdf")
+      target_url = URI.join(url, href) rescue next
       
       # Emit back to the stream
       emit(
