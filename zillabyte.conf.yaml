@@ -1,0 +1,5 @@
+# This file is required by Zillabyte to understand your app.  Most fields should
+# be self-explanatory.  For further information, please visit docs.zillabyte.com or
+# shoot us a note at support@zillabyte.com. 
+language: ruby
+script: app.rb
