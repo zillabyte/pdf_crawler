@@ -1,5 +1,6 @@
 require 'zillabyte' 
 require 'nokogiri'
+require 'open-uri'
 app = Zillabyte.app("document_extractor")
 
 
