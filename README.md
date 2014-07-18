@@ -1,3 +1,10 @@
+# Crawling the Web for Documents
+
+This is a fairly simple App that looks at web documents in the `deep_web` corpus and identifies `.pdf` links. The `deep_web` corpus is a deep crawl of 
+
+
+***
+
 # Getting Started with Zillabyte Apps
 
 Zillabyte Apps are chunks of code that can scalably analyze almost any type of data.  You develop & test the app locally and then push to the Cloud when you are ready to scale. 
@@ -120,4 +127,7 @@ $ zillabyte data
 # download the entire dataset to a local file
 $ zillabyte data:pull hello_worlds my_local_file
 ```
+
+
+[![Powered by Zillabyte](http://www.zillabyte.com/powered_by.png)](http://www.zillabyte.com/)
 
