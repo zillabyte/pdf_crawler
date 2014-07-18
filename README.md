@@ -129,5 +129,5 @@ $ zillabyte data:pull hello_worlds my_local_file
 ```
 
 
-[![Powered by Zillabyte](http://www.zillabyte.com/powered_by.png)](http://www.zillabyte.com/)
+[![Powered by Zillabyte](http://www.zillabyte.com/powered_by-large.png)](http://www.zillabyte.com/)
 
