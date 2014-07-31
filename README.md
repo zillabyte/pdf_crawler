@@ -1,6 +1,52 @@
-# Crawling the Web for Documents
+# Crawling the Web for PDFs
 
-This is a fairly simple App that looks at web documents in the `deep_web` corpus and identifies `.pdf` links. The `deep_web` corpus is a deep crawl of 
+This app will identify PDFs and other documents scrattered across the web.  The motivating use-case is to identify prospective sales leads who will benefit from better document management services. 
+
+This app uses one of Zillabyte's pre-crawled copy of the web.  The dataset, `web_deep`, is a cached copy of the top 500 pages of the top 1 million domains on the web (500,000,000 pages total).  The dataset updates with a fresh crawl every week.  Although the `web_deep` dataset is a good proxy for the "important stuff on the web", it is by no means exhaustive.  If you require more coverage, you'll need to use Zillabyte's live-crawing feature.  The drawback is that it may be more expensive, and will not be as quick to analyze.  Contact us at support@zillabyte.com for more information. 
+
+To use start running this app, tweak the code and follow the steps outlined below.  Alternatively, take a look at the `sample_output` directory in this repo; it contains the output from previous run of the app. 
+
+### Run Locally
+
+If you haven't already done so, you'll need to install the Zillabyte Command Line Interface and authenticate with your Zillabyte account: 
+
+```bash
+$ zillabyte login 
+Enter your Zillabyte credentials
+Email: YOUR_EMAIL
+Auth Token: YOUR_AUTH_TOKEN  # visit http://zillabyte.com to retrieve 
+
+Register SSH key ~/.ssh/id_rsa.pub? (y/N) Y
+SSH keys added.  Use 'zillabyte keys' to manage.
+Authentication complete.
+````
+
+The main file in a App is the `app.rb` file.  You may wish to tweak `app.rb` for your specific needs.  To help the development process, run the `zillabyte apps:test` command.  It will create simulated cloud environment for your app.  Use this to rapidly test & debug your code. 
+
+```bash
+$ zillabyte apps:test  # or 'zillabyte test'
+
+```
+
+
+
+### Tweak the Code 
+
+### Push to Zillabyte 
+
+### Check Status
+
+### Download Results
+
+
+[![Powered by Zillabyte](http://www.zillabyte.com/powered_by.png)](http://www.zillabyte.com/)
+
+
+
+
+
+***
+
 
 
 ***
@@ -127,7 +173,4 @@ $ zillabyte data
 # download the entire dataset to a local file
 $ zillabyte data:pull hello_worlds my_local_file
 ```
-
-
-[![Powered by Zillabyte](http://www.zillabyte.com/powered_by.png)](http://www.zillabyte.com/)
 

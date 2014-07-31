@@ -1,11 +1,12 @@
 require 'zillabyte' 
 require 'nokogiri'
 require 'open-uri'
-app = Zillabyte.app("document_extractor")
+
+app = Zillabyte.app("pdf_extractor")
 
 
-# This is a Zillabyte Open Dataset; Details at zillabyte.com/open-data 
-stream = app.source("select * from web_deep")
+# This is a Zillabyte Open Dataset; Details at zillabyte.com/data 
+stream = app.source("web_deep")
 
 
 # For each page in the web data, perform the following... 
@@ -13,7 +14,7 @@ stream = stream.each do |tuple|
   
   # Init 
   url = URI.parse(tuple[:url]) rescue next
-  doc = Nokogiri::HTML(tuple[:html])
+  doc = Nokogiri::HTML(tuple[:html]) rescue next
   
   # Extract all the links, see which ones are '.pdfs'
   doc.css('a').each do |link|
@@ -38,10 +39,11 @@ end
 
 # Finally, sink the data back to ZB for later download... 
 stream = stream.sink do
-  name "web_documents"
+  name "web_pdfs"
   column :type, :string
   column :source_url, :string
   column :source_domain, :string
   column :target_url, :string
   column :target_domain, :string
 end
+
