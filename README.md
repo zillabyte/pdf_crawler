@@ -6,6 +6,7 @@ This app uses one of Zillabyte's pre-crawled copy of the web.  The dataset, `web
 
 To use start running this app, tweak the code and follow the steps outlined below.  Alternatively, take a look at the `sample_output` directory in this repo; it contains the output from previous run of the app. 
 
+For more information, check out [docs.zillabyte.com](http://docs.zillabyte.com)
 
 [![Powered by Zillabyte](http://www.zillabyte.com/powered_by.png)](http://docs.zillabyte.com/)
 
